@@ -110,7 +110,6 @@ void _rotl(stack_t **head, unsigned int __attribute__ ((unused)) line)
 	free_args(args);
 }
 
-<<<<<<< HEAD
 /**
  * _rotr = rotates the stack
  * @head: pointer to stack
@@ -141,5 +140,3 @@ void _rotr(stack_t **head, unsigned int __attribute__ ((unused)) line)
 	}
 	free_args(args);
 }
-=======
->>>>>>> 5a85fea2f26f679e3c9c4cfb99fd3586063abc1d
