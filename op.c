@@ -71,9 +71,15 @@ void _pint(stack_t **head, unsigned int line)
 	free_args(args);
 }
 
+/**
+ * _pop - remove top on the stack
+ * @head: pointer to top of stack
+ * @line: line number
+ */
 void _pop(stack_t **head, unsigned int line)
 {
 	stack_t *current = *head;
+
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
@@ -83,5 +89,27 @@ void _pop(stack_t **head, unsigned int line)
 	}
 	*head = (*head)->next;
 	free(current);
+	free_args(args);
+}
+
+/**
+ * _swap - swaps first and second element of stack
+ * @head: pointer to top of stack
+ * @line: line number
+ */
+void _swap(stack_t **head, unsigned int line)
+{
+	int temp;
+
+	if ((*head == NULL) || ((*head)->next == NULL))
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
+		free_args(args);
+		free_stack(head);
+		exit(EXIT_FAILURE);
+	}
+	temp = ((*head)->next)->n;
+	((*head)->next)->n = (*head)->n;
+	(*head)->n = temp;
 	free_args(args);
 }
