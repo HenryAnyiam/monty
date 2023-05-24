@@ -66,6 +66,8 @@ void _pint(stack_t **head, unsigned int line)
 	}
 	else
 		fprintf(stdout, "%d\n", (*head)->n);
+	free(args);
+	free_stack(head);
 }
 
 
