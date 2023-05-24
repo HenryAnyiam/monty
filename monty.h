@@ -39,7 +39,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+int _putchar(char c);
 ssize_t get_in(char **buf, int fd);
 void free_stack(stack_t **head);
 int set_args(char *buf);
@@ -62,5 +62,6 @@ void _sub(stack_t **head, unsigned int line);
 void _div(stack_t **head, unsigned int line);
 void _mul(stack_t **head, unsigned int line);
 void _mod(stack_t **head, unsigned int line);
+void _pchar(stack_t **head, unsigned int line);
 
 #endif

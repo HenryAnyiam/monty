@@ -30,3 +30,29 @@ void _mod(stack_t **head, unsigned int line)
 	free(current);
 	free_args(args);
 }
+
+
+/**
+ * _pchar - To print the char at the top of the stack
+ * @head: pointer to the head of the stack
+ * @line: line number
+ * Return:void
+ */
+
+void _pchar(stack_t **head, unsigned int line)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
+		free_args(args);
+		free_stack(head);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		_putchar((*head)->n);
+	}
+		_putchar(10);
+	free_args(args);
+}
+

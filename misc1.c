@@ -87,3 +87,16 @@ int _strcmp(char *s1, char *s2)
 		j = s1[i] - s2[i];
 	return (j);
 }
+
+/**
+*  _putchar - writes the character to c to stdout
+* @c: The character to print
+* Return: on sucess 1.
+* on error, -1 is returned, and error is set appropriately
+*/
+
+int _putchar(char c)
+{
+	return(write(1, &c, 1));
+}
+
