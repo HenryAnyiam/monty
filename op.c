@@ -49,3 +49,35 @@ void _pall(stack_t **head, unsigned int __attribute__ ((unused)) line)
 	}
 	free_args(args);
 }
+
+/**
+ * _pint - To print the top of the stack
+ * @head: pointer to the head of the stack
+ * @line: line number
+ * Return:void
+ */
+
+void _pint(stack_t **head, unsigned int line)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
+		free_stack(head);
+		free_args(args);
+		exit(EXIT_FAILURE);
+	}
+	else
+		fprintf(stdout, "%d\n", (*head)->n);
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -97,11 +97,12 @@ int handle_op(stack_t **head, unsigned int line)
 	instruction_t in[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 	int i;
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; in[i].opcode != NULL; i++)
 	{
 		if (_strcmp(in[i].opcode, args[0]) == 0)
 		{

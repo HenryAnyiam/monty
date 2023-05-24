@@ -53,5 +53,5 @@ char *_strdup(const char *src);
 ssize_t _getline(char **buffer, size_t *size, int fd);
 char *_strcatint(char *str, char c);
 int _strcmp(char *s1, char *s2);
-
+void _pint(stack_t **head, unsigned int line);
 #endif
