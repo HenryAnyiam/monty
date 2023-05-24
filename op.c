@@ -44,7 +44,7 @@ void _pall(stack_t **head, unsigned int __attribute__ ((unused)) line)
 
 	while (current)
 	{
-		printf("%d\n", current->n);
+		fprintf(stdout, "%d\n", current->n);
 		current = current->next;
 	}
 	free_args(args);
