@@ -61,9 +61,64 @@ void _pchar(stack_t **head, unsigned int line)
 
 		{
 			_putchar((*head)->n);
+			_putchar(10);
 		}
+	}
+	free_args(args);
+}
+
+/**
+ * _pstr - to print string starting from top stack
+ * @head: pointer to the top of the stack
+ * @line: line
+ * Return: null
+ */
+void _pstr(stack_t **head, unsigned int line)
+{
+	stack_t *temp = *head;
+
+	(void)line;
+
+	if (*head == NULL)
+		_putchar(10);
+	while (temp != NULL && temp->next != NULL)
+	{
+		if (temp->n == 0 || temp->n > 127)
+			break;
+
+		_putchar(temp->n);
+		temp = temp->next;
 	}
 	_putchar(10);
 	free_args(args);
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
