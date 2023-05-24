@@ -56,5 +56,6 @@ int _strcmp(char *s1, char *s2);
 void _pint(stack_t **head, unsigned int line);
 void _pop(stack_t **stack, unsigned int line);
 void _swap(stack_t **stack, unsigned int line);
+void _add(stack_t **stack, unsigned int line);
 
 #endif
