@@ -46,7 +46,7 @@ int set_args(char *buf)
 	int i = 0, j = 2;
 	char *hold = NULL;
 
-	for (i = 0; buf[i] != '\0'; i++)
+	for (i = 0; (buf[i] != '\0' || buf[i] != '#'); i++)
 	{
 		if (buf[i] == ' ')
 			continue;
@@ -60,7 +60,7 @@ int set_args(char *buf)
 			fprintf(stderr, "Error: malloc failed\n");
 			return (0);
 		}
-		while ((buf[i] != ' ') && (buf[i] != '\0'))
+		while ((buf[i] != ' ') && (buf[i] != '\0' || buf[i] != '#'))
 		{
 			if (hold == NULL)
 				hold = _strcatint(_strdup(""), buf[i]);
@@ -105,6 +105,7 @@ int handle_op(stack_t **head, unsigned int line)
 		{"sub", _sub},
 		{"div", _div},
 		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 	int i;
