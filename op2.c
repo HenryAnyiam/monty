@@ -81,11 +81,8 @@ void _pstr(stack_t **head, unsigned int line)
 
 	if (*head == NULL)
 		_putchar(10);
-	while (temp != NULL && temp->next != NULL)
+	while (temp != NULL && temp->n != 0 && (temp->n >= 0 || temp->n <= 127))
 	{
-		if (temp->n == 0 || temp->n > 127)
-			break;
-
 		_putchar(temp->n);
 		temp = temp->next;
 	}
