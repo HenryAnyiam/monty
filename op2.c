@@ -109,3 +109,34 @@ void _rotl(stack_t **head, unsigned int __attribute__ ((unused)) line)
 	}
 	free_args(args);
 }
+
+/**
+ * _rotr = rotates the stack
+ * @head: pointer to stack
+ * @line: line
+ */
+void _rotr(stack_t **head, unsigned int __attribute__ ((unused)) line)
+{
+	stack_t *end = *head;
+	stack_t *start = *head;
+	int i, temp, len = 1;
+
+	if (head != NULL)
+	{
+		while (end->next != NULL)
+		{
+			end = end->next;
+			len++;
+		}
+		len /= 2;
+		for (i = 0; i < len; i++)
+		{
+			temp = start->n;
+			start->n = end->n;
+			end->n = temp;
+			start = start->next;
+			end = end->prev;
+		}
+	}
+	free_args(args);
+}
