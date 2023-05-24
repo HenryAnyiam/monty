@@ -70,3 +70,18 @@ void _pint(stack_t **head, unsigned int line)
 		fprintf(stdout, "%d\n", (*head)->n);
 	free_args(args);
 }
+
+void _pop(stack_t **head, unsigned int line)
+{
+	stack_t *current = *head;
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+		free_args(args);
+		free_stack(head);
+		exit(EXIT_FAILURE);
+	}
+	*head = (*head)->next;
+	free(current);
+	free_args(args);
+}

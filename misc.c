@@ -98,6 +98,7 @@ int handle_op(stack_t **head, unsigned int line)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"pop", _pop},
 		{NULL, NULL}
 	};
 	int i;
