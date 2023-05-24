@@ -48,22 +48,15 @@ void _pchar(stack_t **head, unsigned int line)
 		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
-	else
+	if (((*head)->n < 32) || ((*head)->n > 126))
 	{
-		if (((*head)->n < 32) || ((*head)->n > 126))
-		{
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
-			free_args(args);
-			free_stack(head);
-			exit(EXIT_FAILURE);
-		}
-		else
-
-		{
-			fprintf(stdout, "%c\n", (*head)->n);
-			free_args(args);
-		}
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+		free_args(args);
+		free_stack(head);
+		exit(EXIT_FAILURE);
 	}
+	fprintf(stdout, "%c\n", (*head)->n);
+	free_args(args);
 }
 
 /**
@@ -75,46 +68,16 @@ void _pchar(stack_t **head, unsigned int line)
 void _pstr(stack_t **head, unsigned int line)
 {
 	stack_t *temp = *head;
-
 	(void)line;
 
 	if (*head == NULL)
-		_putchar(10);
-	while (temp != NULL && temp->n != 0 && (temp->n >= 0 || temp->n <= 127))
+		fprintf(stdout, "\n");
+	while ((temp != NULL && temp->n != 0) && (temp->n >= 0 || temp->n <= 127))
 	{
-		_putchar(temp->n);
+		fprintf(stdout, "%c", temp->n);
 		temp = temp->next;
 	}
-	_putchar(10);
+	fprintf(stdout, "\n");
 	free_args(args);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
