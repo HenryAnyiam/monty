@@ -84,3 +84,23 @@ void _pstr(stack_t **head, unsigned int line)
 	free_args(args);
 
 }
+
+void _rotl(stack_t **head, unsigned int __attribute__ ((unused)) line)
+{
+	stack_t *current;
+	int temp;
+
+	if (*head != NULL)
+		temp = (*head)->n;
+	if ((*head)->next != NULL)
+	{
+		current = *head;
+		while (current->next != NULL)
+		{
+			current->n = current->next->n;
+			current = current->next;
+		}
+		current->n = temp;
+	}
+	free_args(args);
+}

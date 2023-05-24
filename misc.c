@@ -108,6 +108,7 @@ int handle_op(stack_t **head, unsigned int line)
 		{"mod", _mod},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"rotl", _rotl},
 		{NULL, NULL}
 	};
 	int i;
