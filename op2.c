@@ -53,6 +53,9 @@ void _pchar(stack_t **head, unsigned int line)
 		if ((*head)->n < 0 || (*head)->n > 127)
 		{
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+			free_args(args);
+			free_stack(head);
+			exit(EXIT_FAILURE);
 		}
 		else
 
