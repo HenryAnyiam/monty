@@ -58,9 +58,9 @@ void _pchar(stack_t **head, unsigned int line)
 
 		{
 			_putchar((*head)->n);
-			_putchar(10);
 		}
 	}
+	_putchar(10);
 	free_args(args);
 }
 
