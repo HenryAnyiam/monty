@@ -38,7 +38,8 @@ int main(int argc, char **argv)
 			op = handle_op(&head, line);
 			if (op == -1)
 			{
-				fprintf(stderr, "L%d: unknown instruction%s\n", line, args[0]);
+				fprintf(stderr, "L%d: unknown instruction %s\n", line, args[0]);
+				free_args(args);
 				break;
 			}
 		}
