@@ -48,7 +48,7 @@ void _pchar(stack_t **head, unsigned int line)
 		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
-	if (((*head)->n < 32) || ((*head)->n > 126))
+	if (((*head)->n < 0) || ((*head)->n > 127))
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
 		free_args(args);
@@ -72,12 +72,13 @@ void _pstr(stack_t **head, unsigned int line)
 
 	if (*head == NULL)
 		fprintf(stdout, "\n");
-	while ((temp != NULL && temp->n != 0) && (temp->n > 32 && temp->n <= 126))
+	while ((temp != NULL && temp->n != 0) && (temp->n > 0 && temp->n <= 127))
 	{
 		fprintf(stdout, "%c", temp->n);
 		temp = temp->next;
+		if ((temp == NULL || temp->n == 0) || (temp->n <= 0 || temp->n >= 127))
+			fprintf(stdout, "\n");
 	}
-	fprintf(stdout, "\n");
 	free_args(args);
 
 }
