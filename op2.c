@@ -121,7 +121,7 @@ void _rotr(stack_t **head, unsigned int __attribute__ ((unused)) line)
 	stack_t *start = *head;
 	int i, temp, len = 1;
 
-	if (head != NULL)
+	if (*head != NULL)
 	{
 		while (end->next != NULL)
 		{
