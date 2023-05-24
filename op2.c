@@ -65,9 +65,10 @@ void _pchar(stack_t **head, unsigned int line)
  * @line: line
  * Return: null
  */
-void _pstr(stack_t **head, unsigned int __attribute__ ((unused)) line)
+void _pstr(stack_t **head, unsigned int line)
 {
 	stack_t *temp = *head;
+	(void)line;
 
 	if (*head == NULL)
 		fprintf(stdout, "\n");
