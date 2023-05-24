@@ -57,7 +57,7 @@ int set_args(char *buf)
 		if (args == NULL)
 		{
 			free(buf);
-			fprintf(stderr, "Error: malloc failed");
+			fprintf(stderr, "Error: malloc failed\n");
 			return (0);
 		}
 		while ((buf[i] != ' ') && (buf[i] != '\0'))

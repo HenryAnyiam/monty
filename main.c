@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 {
 	int fd, op = 0;
 	ssize_t check, cmp = -1;
-	unsigned int line = 1;
+	unsigned int line;
 	char *buf;
 	stack_t *head = NULL;
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (1)
+	for (line = 1; ; line++)
 	{
 		check = get_in(&buf, fd);
 		if (check == cmp)
@@ -43,9 +43,9 @@ int main(int argc, char **argv)
 				break;
 			}
 		}
-		line++;
 	}
 	free_stack(&head);
+	close(fd);
 	if (op == -1)
 		exit(EXIT_FAILURE);
 	return (0);
