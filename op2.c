@@ -85,7 +85,7 @@ void _pstr(stack_t **head, unsigned int line)
 
 }
 
-/*
+/**
  * _rotl - moves first element to tge bottom
  * @head: pointer to stack
  * @line: line
@@ -111,7 +111,7 @@ void _rotl(stack_t **head, unsigned int __attribute__ ((unused)) line)
 }
 
 /**
- * _rotr = rotates the stack
+ * _rotr - rotates the stack
  * @head: pointer to stack
  * @line: line
  */
@@ -138,5 +138,4 @@ void _rotr(stack_t **head, unsigned int __attribute__ ((unused)) line)
 			end = end->prev;
 		}
 	}
-	free_args(args);
 }
