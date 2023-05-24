@@ -85,6 +85,11 @@ void _pstr(stack_t **head, unsigned int line)
 
 }
 
+/**
+ * _rotl - moves first element to tge bottom
+ * @head: pointer to stack
+ * @line: line
+ */
 void _rotl(stack_t **head, unsigned int __attribute__ ((unused)) line)
 {
 	stack_t *current;
@@ -92,7 +97,7 @@ void _rotl(stack_t **head, unsigned int __attribute__ ((unused)) line)
 
 	if (*head != NULL)
 		temp = (*head)->n;
-	if ((*head)->next != NULL)
+	if ((*head != NULL) && ((*head)->next != NULL))
 	{
 		current = *head;
 		while (current->next != NULL)
