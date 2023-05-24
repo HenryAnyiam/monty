@@ -65,10 +65,9 @@ void _pchar(stack_t **head, unsigned int line)
  * @line: line
  * Return: null
  */
-void _pstr(stack_t **head, unsigned int line)
+void _pstr(stack_t **head, unsigned int __attribute__ ((unused)) line)
 {
 	stack_t *temp = *head;
-	(void)line;
 
 	if (*head == NULL)
 		fprintf(stdout, "\n");
@@ -80,7 +79,7 @@ void _pstr(stack_t **head, unsigned int line)
 			temp = temp->next;
 		}
 		fprintf(stdout, "\n");
-		free_args(args);
 	}
+	free_args(args);
 
 }
