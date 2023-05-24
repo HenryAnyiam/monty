@@ -101,6 +101,8 @@ int handle_op(stack_t **head, unsigned int line)
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
+		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL}
 	};
 	int i;
