@@ -59,5 +59,7 @@ void _swap(stack_t **stack, unsigned int line);
 void _add(stack_t **stack, unsigned int line);
 void _nop(stack_t **head, unsigned int line);
 void _sub(stack_t **head, unsigned int line);
+void _div(stack_t **head, unsigned int line);
+void _mul(stack_t **head, unsigned int line);
 
 #endif

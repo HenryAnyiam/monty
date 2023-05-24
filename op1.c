@@ -58,3 +58,58 @@ void _sub(stack_t **head, unsigned int line)
 	free(current);
 	free_args(args);
 }
+
+/**
+ * _div - divides first and second element of stack
+ * @head: pointer to top of stack
+ * @line: line number
+ */
+void _div(stack_t **head, unsigned int line)
+{
+	int temp;
+	stack_t *current = *head;
+
+	if ((*head == NULL) || ((*head)->next == NULL))
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line);
+		free_args(args);
+		free_stack(head);
+		exit(EXIT_FAILURE);
+	}
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line);
+		free_args(args);
+		free_stack(head);
+		exit(EXIT_FAILURE);
+	}
+	*head = (*head)->next;
+	temp = (*head)->n / current->n;
+	(*head)->n = temp;
+	free(current);
+	free_args(args);
+}
+
+/**
+ * _mul - multiplies first and second element of stack
+ * @head: pointer to top of stack
+ * @line: line number
+ */
+void _mul(stack_t **head, unsigned int line)
+{
+	int temp;
+	stack_t *current = *head;
+
+	if ((*head == NULL) || ((*head)->next == NULL))
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
+		free_args(args);
+		free_stack(head);
+		exit(EXIT_FAILURE);
+	}
+	*head = (*head)->next;
+	temp = (*head)->n * current->n;
+	(*head)->n = temp;
+	free(current);
+	free_args(args);
+}
