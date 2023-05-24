@@ -63,7 +63,7 @@ void _pint(stack_t **head, unsigned int line)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		free_args(args);
-		free_stack(stack);
+		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
 	else
