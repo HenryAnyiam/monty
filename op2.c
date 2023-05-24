@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  * _mod - divides first and second element of stack
  * @head: pointer to top of stack
