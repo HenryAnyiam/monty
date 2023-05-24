@@ -72,13 +72,15 @@ void _pstr(stack_t **head, unsigned int line)
 
 	if (*head == NULL)
 		fprintf(stdout, "\n");
-	while ((temp != NULL && temp->n != 0) && (temp->n > 0 && temp->n <= 127))
+	else
 	{
-		fprintf(stdout, "%c", temp->n);
-		temp = temp->next;
-		if ((temp == NULL || temp->n == 0) || (temp->n <= 0 || temp->n >= 127))
-			fprintf(stdout, "\n");
+		while (temp != NULL && temp->n > 0 && temp->n <= 127)
+		{
+			fprintf(stdout, "%c", temp->n);
+			temp = temp->next;
+		}
+		fprintf(stdout, "\n");
+		free_args(args);
 	}
-	free_args(args);
 
 }
