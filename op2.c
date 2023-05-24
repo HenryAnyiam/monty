@@ -84,3 +84,60 @@ void _pstr(stack_t **head, unsigned int line)
 	free_args(args);
 
 }
+
+/**
+ * _rot -to rotate the top of the stack
+ * @head: pointer to the head of the stack
+ * @line:line
+ * Return:...
+ */
+
+void _rotl(stack_t **head, unsigned int line)
+{
+	stack_t *temp = *head, *sec;
+	(void)line;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		free_stack(head);
+		free_args(args);
+		exit(EXIT_FAILURE);
+	}
+
+	sec = (*head)->next;
+	sec->prev = NULL;
+
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	temp->next = *head;
+	(*head)->next = NULL;
+	(*head)->prev = temp;
+	*head = sec;
+
+	free_args(args);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
