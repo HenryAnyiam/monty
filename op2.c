@@ -50,7 +50,7 @@ void _pchar(stack_t **head, unsigned int line)
 	}
 	else
 	{
-		if ((*head)->n < 0 || (*head)->n > 255)
+		if (((*head)->n < 0) || ((*head)->n > 127))
 		{
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
 			free_args(args);
@@ -60,11 +60,10 @@ void _pchar(stack_t **head, unsigned int line)
 		else
 
 		{
-			_putchar((*head)->n);
-			_putchar(10);
+			fprintf(stdout, "%c\n", (*head)->n);
+			free_args(args);
 		}
 	}
-	free_args(args);
 }
 
 /**
