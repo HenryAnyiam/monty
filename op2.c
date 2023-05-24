@@ -43,7 +43,7 @@ void _pchar(stack_t **head, unsigned int line)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
 		free_args(args);
 		free_stack(head);
 		exit(EXIT_FAILURE);
