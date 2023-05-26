@@ -143,9 +143,11 @@ int handle_op(stack_t **head, unsigned int line)
  */
 int check_int(char *str)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
+	if (str[i] == '-')
+		i++;
+	for ( ; str[i] != '\0'; i++)
 	{
 		if (!(str[i] <= '9' && str[i] >= '0'))
 			return (-1);

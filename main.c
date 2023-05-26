@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		write(STDERR_FILENO, "USAGE: monty file\n", 19);
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	fd = open(argv[1], O_RDONLY);
