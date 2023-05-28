@@ -117,25 +117,20 @@ void _rotl(stack_t **head, unsigned int __attribute__ ((unused)) line)
  */
 void _rotr(stack_t **head, unsigned int __attribute__ ((unused)) line)
 {
-	stack_t *end = *head;
-	stack_t *start = *head;
-	int i, temp, len = 1;
+	stack_t *current = *head;
+	int temp;
 
 	if (*head != NULL)
 	{
-		while (end->next != NULL)
+		while (current->next != NULL)
+			current = current->next;
+		temp = current->n;
+		while (current->prev != NULL)
 		{
-			end = end->next;
-			len++;
+			current->n = current->prev->n;
+			current = current->prev;
 		}
-		len /= 2;
-		for (i = 0; i < len; i++)
-		{
-			temp = start->n;
-			start->n = end->n;
-			end->n = temp;
-			start = start->next;
-			end = end->prev;
-		}
+		current->n = temp;
 	}
+	free_args(args);
 }

@@ -87,3 +87,33 @@ int _strcmp(char *s1, char *s2)
 		j = s1[i] - s2[i];
 	return (j);
 }
+
+/**
+ * _rotate - rotates the stack
+ * @head: pointer to stack
+ * @line: line
+ */
+void _rotate(stack_t **head, unsigned int __attribute__ ((unused)) line)
+{
+	stack_t *end = *head;
+	stack_t *start = *head;
+	int i, temp, len = 1;
+
+	if (*head != NULL)
+	{
+		while (end->next != NULL)
+		{
+			end = end->next;
+			len++;
+		}
+		len /= 2;
+		for (i = 0; i < len; i++)
+		{
+			temp = start->n;
+			start->n = end->n;
+			end->n = temp;
+			start = start->next;
+			end = end->prev;
+		}
+	}
+}

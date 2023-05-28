@@ -66,5 +66,6 @@ void _pchar(stack_t **head, unsigned int line);
 void _pstr(stack_t **head, unsigned int line);
 void _rotl(stack_t **head, unsigned int line);
 void _rotr(stack_t **head, unsigned int line);
+void _rotate(stack_t **head, unsigned int line);
 
 #endif

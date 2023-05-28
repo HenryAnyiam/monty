@@ -122,14 +122,12 @@ int handle_op(stack_t **head, unsigned int line)
 		{
 			if ((q == 1) && (i == 0))
 			{
-				_rotr(head, line);
+				_rotate(head, line);
 				in[i].f(head, line);
-				_rotr(head, line);
+				_rotate(head, line);
 			}
 			else
 				in[i].f(head, line);
-			if (i == 14)
-				free_args(args);
 			return (0);
 		}
 	return (-1);
